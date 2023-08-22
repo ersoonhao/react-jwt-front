@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# WIP NOTES 
+This project compiles but there are still runtime errors due to circular dependences and the backend is not built. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Note to self, fix the circular dependences after working on the backend. Learning objectives has been accompilished regardless for react 6 , JWT , redux.
 
-## Available Scripts
+Note redux might be outdated but it is still used by citi. 
 
-In the project directory, you can run:
+This project is references a react 5 but is built in react 6. Some of the changes are below. 
 
-### `npm start`
+# Bugs 
+Root cause: exporting and importing for services. 
+Redux Cannot access '__WEBPACK_DEFAULT_EXPORT__' before initialization
+https://stackoverflow.com/questions/72543593/redux-cannot-access-webpack-default-export-before-initialization
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Note: the file causing the issue is not yet found. Fix later. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+# React Frontend Learnings
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Event Bus
+Event bus is a router that receives events and delivers them to zero or more destinations, or targets.
 
-### `npm run build`
+Use case: routes many sources to many targets 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Event bus is just SQS + SNS but betteR?
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Events –  similar to messages in the context of SNS and SQS, just with a fancier name. They consist of JSON blobs that describes the source and payload of the event. Events can also be “scheduled” to run at periodic intervals using a cron expression. This is useful for those of you looking to perform timed batch jobs regularly at a certain time of day.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# `export const` vs. `export default` in ES6
+The only difference is that using default you have to be strict with variable names that match the export class. 
+https://stackoverflow.com/questions/33611812/export-const-vs-export-default-in-es6
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Changes to react 6 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 'Switch' React Router Dom -> Routes
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Redirect ---  
+# -> {user && <Navigate to="/dashboard" replace={true} />}
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Comments 
+React debugging is lacking 
